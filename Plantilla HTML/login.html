@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Casas medellin</title>
+    <title>APP Coleccionables</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
@@ -18,64 +18,35 @@
     <link rel="stylesheet" href="assets/css/Table-With-Search-1.css">
     <link rel="stylesheet" href="assets/css/Table-With-Search.css">
     <link rel="stylesheet" href="assets/css/untitled.css">
+    
 </head>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-        <div class="container"><a class="navbar-brand logo" href="#">Casas Medellín</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                data-aos="fade-down-left" id="navbarNav">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Catálogo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Iniciar sesión</a></li>
-                </ul>
-            </div>
+        <div class="container">
+            <a class="navbar-brand logo" href="menu.html">APP Coleccionables</a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         </div>
     </nav>
     <main class="page lanidng-page">
         <div class="container-fluid">
             <div class="row mh-100vh">
-                <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block">
+                <div class="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block">
                     <div class="m-auto w-lg-75 w-xl-50">
-                        <h1><a href="#">Casas<span style="color: rgb(12,35,72);">Medellín</span></a></h1>
-                        <form>
+                        <form >
                             <div class="form-group"><label class="text-secondary">Usuario</label><input class="form-control" type="text" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email"></div>
-                            <div class="form-group"><label class="text-secondary">Contraseña</label><input class="form-control" type="password" required=""></div><button class="btn btn-info mt-2" type="submit">Iniciar sesión</button></form>
+                            <div class="form-group"><label class="text-secondary">Contraseña</label><input class="form-control" type="password" required=""></div><button onclick="login()" class="btn btn-info mt-2" type="submit">Iniciar sesión</button></form>
                         <p class="mt-3 mb-0"></p>
                     </div>
-                </div>
-                <div class="col-lg-6 d-flex align-items-end" id="bg-block" style="background-image: url(&quot;assets/img/alice-pasqual-4orQSKpTKPI-unsplash.jpg&quot;);background-size: contain;background-position: center center;">
-                    <p class="ml-auto small text-dark mb-2"><em>Photo by Alice Pasqual&nbsp;</em><a class="text-dark" href="https://unsplash.com/photos/v0zVmWULYTg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank"></a><br></p>
                 </div>
             </div>
         </div>
     </main>
-    <footer style="background-color: rgb(82,147,252);">
-        <div class="row">
-            <div class="col-sm-6 col-md-4 footer-navigation">
-                <h3><a>Proyecto<span style="color: rgb(12,35,72);">Tecoco</span></a></h3>
-                <p class="company-name">Derechos reservados © 2020</p>
-            </div>
-            <div class="col-sm-6 col-md-4 footer-contacts">
-                <div>
-                    <p class="footer-center-info email text-left">Camilo Loaiza</p>                </div>
-                <div>
-                    <p class="footer-center-info email text-left">Juan Moya</p>                </div>
-                <div>
-                    <p class="footer-center-info email text-left">Julian Ospina</p>
-                </div>
-                <div>
-                    <p class="footer-center-info email text-left">Juan Pe&ntilde;a</p>
-                </div>
-                <div>
-                    <p class="footer-center-info email text-left">Juan Usuga</p>
-                </div>
-                
-                    
-            </div>
-        </div>
-    </footer>
+    <script>
+        function login() {
+            document.location.href = "menu.html";
+        }
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
