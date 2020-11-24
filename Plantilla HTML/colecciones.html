@@ -54,6 +54,7 @@
                         <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
                         <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
                         <a href="https://news.google.com/search?q=coleccion de Heroes" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
                     </div><br>
                 </div>
                 <div class="card col" style="width: 22rem;">
@@ -70,6 +71,7 @@
                         <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
                         <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
                         <a href="https://news.google.com/search?q=coleccion de Laminas del mundial" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
                     </div><br>
                 </div>
             </div>
@@ -168,7 +170,27 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="exportarColeccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Exportar colección a MercadoLibre</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Funcionalidad en progreso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    
 
     <script>
         function eliminarColeccion(element) {
@@ -194,6 +216,7 @@
                         <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
                         <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
                         <a href="https://news.google.com/search?q=coleccion de Laminitas yet" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
                     </div><br>
                 </div>`;
             } else if (document.getElementById('monedas').checked) {
@@ -211,6 +234,7 @@
                         <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
                         <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
                         <a href="https://news.google.com/search?q=coleccion de Monedas del mundo" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
                         
                     </div><br>
                 </div>`;
@@ -229,6 +253,7 @@
                         <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
                         <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
                         <a href="https://news.google.com/search?q=coleccion de carros lujosos" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
                     </div><br>
                 </div>`;
             } else {
@@ -246,6 +271,7 @@
                         <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
                         <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
                         <a href="https://news.google.com/search?q=coleccion de ${document.getElementById('nombreColeccion').value}" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
                     </div><br>
                 </div>`;
             }
