@@ -28,10 +28,11 @@
             <div class="collapse navbar-collapse"
                 data-aos="fade-down-left" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Mis Colecciones</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Noticias</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Perfil</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Cerrar Sesión</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="buscarUsuario.html">Buscar Usuario</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="filtrarColeccionable.html">Filtrar coleccionables</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="colecciones.html">Colecciones</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="modificarPerfil.html">Perfil</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="login.html">Cerrar Sesión</a></li> 
                 </ul>
             </div>
         </div>
@@ -60,26 +61,26 @@
                                 <tbody>
                                     <tr>
                                         <td>HarryPotter@mail.com</td>
-                                        <td id="e1">Baneado</td>
+                                        <td id="e1">Activo</td>
                                         <td>
-                                            <button class="btn btn-success" id="a1" onclick="ban(1,'a')">Activar Cuenta</button>
-                                            <button class="btn btn-danger d-none" id="b1" onclick="ban(1,'b')">Banear</button>
+                                            <button class="btn btn-success d-none" id="a1" onclick="ban(1,'a')">Activar Cuenta</button>
+                                            <button class="btn btn-danger" id="b1" onclick="ban(1,'b')">Banear</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>TimmyTurner@mail.com</td>  
-                                        <td id="e2">Activo</td>
+                                        <td id="e2">Baneado</td>
                                         <td>
-                                            <button class="btn btn-success d-none" id="a2" onclick="ban(2,'a')">Activar Cuenta</button>
-                                            <button class="btn btn-danger" id="b2" onclick="ban(2,'b')">Banear</button>
+                                            <button class="btn btn-success" id="a2" onclick="ban(2,'a')">Activar Cuenta</button>
+                                            <button class="btn btn-danger d-none" id="b2" onclick="ban(2,'b')">Banear</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>JordiENP@redtube.com</td>  
-                                        <td id="e3">Activo</td>
+                                        <td id="e3">Baneado</td>
                                         <td>
-                                            <button class="btn btn-success d-none" id="a3" onclick="ban(3,'a')">Activar Cuenta</button>
-                                            <button class="btn btn-danger" id="b3" onclick="ban(3,'b')">Banear</button>
+                                            <button class="btn btn-success" id="a3" onclick="ban(3,'a')">Activar Cuenta</button>
+                                            <button class="btn btn-danger d-none" id="b3" onclick="ban(3,'b')">Banear</button>
                                         </td>
                                     </tr>
                                 </tbody>

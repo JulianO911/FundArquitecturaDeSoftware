@@ -36,7 +36,7 @@
                         <form >
                             <div class="form-group"><label class="text-secondary">Usuario</label><input class="form-control" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}$" inputmode="email"></div>
                             <div class="form-group"><label class="text-secondary">Contraseña</label><input class="form-control" type="password" ></div>
-                            <button onclick="login()" class="btn btn-info mt-2" type="submit">Iniciar sesión</button>
+                            <button onclick="login()" class="btn btn-info mt-2" type="button">Iniciar sesión</button>
                         </form>
                         
                         <a href="registrarUsuario.html"><button onclick="form()" class="btn btn-info mt-2" type="button">Registrar</button></a>
@@ -48,7 +48,7 @@
     </main>
     <script>
         function login() {
-            document.location.href = "menu.html";
+            document.location.href = "colecciones.html";
         }
     </script>
     <script src="assets/js/jquery.min.js"></script>
