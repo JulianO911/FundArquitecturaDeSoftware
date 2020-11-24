@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>APP Coleccionables</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/-Login-form-Page-BS4-.css">
+    <link rel="stylesheet" href="assets/css/Drag-Drop-File-Input-Upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/NZFieldLabel---Required.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container">
+            <a class="navbar-brand logo" href="#">APP Coleccionables</a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle </span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                data-aos="fade-down-left" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="colecciones.html">Mis Colecciones</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Noticias</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Perfil</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page lanidng-page">
+        <div class="container">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#crearColeccionModal">+ Crear</button>
+            <br><br>
+            <div class="row" id="colecciones">
+                <div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col" id="nombreHeroes">Heroes</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text" id="descripcionHeroes">Heroes del mundo Marvel y DC se reunen en esta colección para benerar al gran Teofilo Gutierrez</p>
+                        <p class="card-text">Tamaño: 3 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text" id="categoriaHeroes">Categoría: Heroes, Marvel, DC, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                        <a href="https://news.google.com/search?q=coleccion de Heroes" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
+                    </div><br>
+                </div>
+                <div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">Laminas del mundial</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">Laminas del mundial de Brasil 2014, dónde Teofilo Gutierrez se dio a conocer al mundo del fútbol</p>
+                        <p class="card-text">Tamaño: 12 Coleccionables</p>
+                        <p class="card-text">Estado: Completa</p>
+                        <p class="card-text">Categoría: Fútbol, Mundial 2014, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                        <a href="https://news.google.com/search?q=coleccion de Laminas del mundial" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
+                    </div><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="crearColeccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Crear Colección</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="crearColeccionForm">
+                        <div class="modal-body">
+                            <div class="form-group" id="plantillas">
+                                <label for="plantillas">Crear desde una plantilla</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="noPlantilla" value="option1" checked>
+                                    <label class="form-check-label" for="noPlantilla">
+                                        No deseo usar una plantilla
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="laminitas" value="option2">
+                                    <label class="form-check-label" for="laminitas">
+                                        Laminitas yet
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="monedas" value="option3">
+                                    <label class="form-check-label" for="monedas">
+                                        Monedas
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="carros" value="option4">
+                                    <label class="form-check-label" for="carros">
+                                        Carros
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombreColeccion">Nombre</label>
+                                <input type="text" class="form-control" id="nombreColeccion" placeholder="Nombre de la colección">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcionColeccion">Descripción</label>
+                                <input type="text" class="form-control" id="descripcionColeccion" placeholder="Descripción de la colección">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoriaColeccion">Categorías</label>
+                                <input type="text" class="form-control" id="categoriaColeccion" placeholder="Categorías separadas por comas ','">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Crear</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="editarColeccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Editar Colección</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="editarColeccionForm">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nombreEditarColeccion">Nombre</label>
+                                <input type="text" class="form-control" id="nombreEditarColeccion" value="Heroes">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcionEditarColeccion">Descripción</label>
+                                <input type="text" class="form-control" id="descripcionEditarColeccion" value="Heroes del mundo Marvel y DC se reunen en esta colección para benerar al gran Teofilo Gutierrez">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoriaEditarColeccion">Categorías</label>
+                                <input type="text" class="form-control" id="categoriaEditarColeccion" value="Heroes, Marvel, DC, Celebralo curramba!!!">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Editar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exportarColeccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Exportar colección a MercadoLibre</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Funcionalidad en progreso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script>
+        function eliminarColeccion(element) {
+            element.closest('.card').remove();
+        }
+
+        function crearColeccion(event) {
+            event.preventDefault();
+            let card;
+
+            if (document.getElementById('laminitas').checked) {
+                card = `<div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">Laminitas yet</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">Laminas de animales, montañas y rios del planeta donde habita Teofilo Gutierrez</p>
+                        <p class="card-text">Tamaño: 367 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text">Categoría: Laminas, Animales, Naturaleza, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                        <a href="https://news.google.com/search?q=coleccion de Laminitas yet" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
+                    </div><br>
+                </div>`;
+            } else if (document.getElementById('monedas').checked) {
+                card = `<div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">Monedas del mundo</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">Monedas del mundo donde habita Teofilo Gutierrez</p>
+                        <p class="card-text">Tamaño: 10050 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text">Categoría: Carros, Lujos, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                        <a href="https://news.google.com/search?q=coleccion de Monedas del mundo" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
+                        
+                    </div><br>
+                </div>`;
+            } else if (document.getElementById('carros').checked) {
+                card = `<div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">Carros lujosos</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">Carros de la colección personal de Teofilo Gutierrez</p>
+                        <p class="card-text">Tamaño: 7 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text">Categoría: Laminas, Animales, Naturaleza, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                        <a href="https://news.google.com/search?q=coleccion de carros lujosos" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
+                    </div><br>
+                </div>`;
+            } else {
+                card = `<div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">${document.getElementById('nombreColeccion').value}</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">${document.getElementById('descripcionColeccion').value}</p>
+                        <p class="card-text">Tamaño: 3 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text">Categoría: ${document.getElementById('categoriaColeccion').value}</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                        <a href="https://news.google.com/search?q=coleccion de ${document.getElementById('nombreColeccion').value}" class="card-link btn btn-outline-secondary" target="_blank">Noticias</a>
+                        <a href="#" class="card-link btn btn-outline-info" data-toggle="modal" data-target="#exportarColeccionModal">Exportar</a>
+                    </div><br>
+                </div>`;
+            }
+
+            const element = document.createElement('div');
+            document.getElementById('colecciones').append(element);
+            element.outerHTML = card;
+        };
+
+        function editarColeccion(event) {
+            event.preventDefault();
+
+            document.getElementById('nombreHeroes').innerHTML = document.getElementById('nombreEditarColeccion').value;
+            document.getElementById('descripcionHeroes').innerHTML = document.getElementById('descripcionEditarColeccion').value;
+            document.getElementById('categoriaHeroes').innerHTML = document.getElementById('categoriaEditarColeccion').value;
+        };
+
+        function bindEvents () {
+            document.addEventListener('click', function (event) {
+                const target = event.target;
+                if (target.dataset.event) {
+                    window[target.dataset.event](target);
+                }
+            });
+
+            document.getElementById('crearColeccionForm').addEventListener('submit', crearColeccion);
+            document.getElementById('editarColeccionForm').addEventListener('submit', editarColeccion);
+        };
+
+        (function () {
+            document.addEventListener('DOMContentLoaded', bindEvents, false);
+        })();
+    </script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+</html>
