@@ -39,16 +39,37 @@
         <div class="container">
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#crearColeccionModal">+ Crear</button>
             <br><br>
-            <div class="card" style="width: 22rem;">
-                <div class="card-body">
-                    <div class="row card-title">
-                        <h5 class=" col">Laminas del mundial</h5>
-                        <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
-                    </div>
-                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                    <p class="card-text">Laminas del mundial de Brasil 2014, dónde Teofilo gutierrez se dio a conocer al mundo del fútbol</p>
-                    <a href="#" class="card-link btn btn-outline-warning">Editar</a>
-                </div><br>
+            <div class="row" id="colecciones">
+                <div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col" id="nombreHeroes">Heroes</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text" id="descripcionHeroes">Heroes del mundo Marvel y DC se reunen en esta colección para benerar al gran Teofilo Gutierrez</p>
+                        <p class="card-text">Tamaño: 3 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text" id="categoriaHeroes">Categoría: Heroes, Marvel, DC, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                    </div><br>
+                </div>
+                <div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">Laminas del mundial</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">Laminas del mundial de Brasil 2014, dónde Teofilo Gutierrez se dio a conocer al mundo del fútbol</p>
+                        <p class="card-text">Tamaño: 12 Coleccionables</p>
+                        <p class="card-text">Estado: Completa</p>
+                        <p class="card-text">Categoría: Fútbol, Mundial 2014, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                    </div><br>
+                </div>
             </div>
         </div>
 
@@ -64,6 +85,33 @@
                     </div>
                     <form id="crearColeccionForm">
                         <div class="modal-body">
+                            <div class="form-group" id="plantillas">
+                                <label for="plantillas">Crear desde una plantilla</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="noPlantilla" value="option1" checked>
+                                    <label class="form-check-label" for="noPlantilla">
+                                        No deseo usar una plantilla
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="laminitas" value="option2">
+                                    <label class="form-check-label" for="laminitas">
+                                        Laminitas yet
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="monedas" value="option3">
+                                    <label class="form-check-label" for="monedas">
+                                        Monedas
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="carros" value="option4">
+                                    <label class="form-check-label" for="carros">
+                                        Carros
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="nombreColeccion">Nombre</label>
                                 <input type="text" class="form-control" id="nombreColeccion" placeholder="Nombre de la colección">
@@ -72,9 +120,46 @@
                                 <label for="descripcionColeccion">Descripción</label>
                                 <input type="text" class="form-control" id="descripcionColeccion" placeholder="Descripción de la colección">
                             </div>
+                            <div class="form-group">
+                                <label for="categoriaColeccion">Categorías</label>
+                                <input type="text" class="form-control" id="categoriaColeccion" placeholder="Categorías separadas por comas ','">
+                            </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelare</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                 <button type="submit" class="btn btn-primary">Crear</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="editarColeccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Editar Colección</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="editarColeccionForm">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nombreEditarColeccion">Nombre</label>
+                                <input type="text" class="form-control" id="nombreEditarColeccion" value="Heroes">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcionEditarColeccion">Descripción</label>
+                                <input type="text" class="form-control" id="descripcionEditarColeccion" value="Heroes del mundo Marvel y DC se reunen en esta colección para benerar al gran Teofilo Gutierrez">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoriaEditarColeccion">Categorías</label>
+                                <input type="text" class="form-control" id="categoriaEditarColeccion" value="Heroes, Marvel, DC, Celebralo curramba!!!">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Editar</button>
                             </div>
                         </div>
                     </form>
@@ -88,6 +173,89 @@
             element.closest('.card').remove();
         }
 
+        function crearColeccion(event) {
+            event.preventDefault();
+            let card;
+
+            if (document.getElementById('laminitas').checked) {
+                card = `<div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">Laminitas yet</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">Laminas de animales, montañas y rios del planeta donde habita Teofilo Gutierrez</p>
+                        <p class="card-text">Tamaño: 367 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text">Categoría: Laminas, Animales, Naturaleza, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                    </div><br>
+                </div>`;
+            } else if (document.getElementById('monedas').checked) {
+                card = `<div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">Monedas del mundo</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">Monedas del mundo donde habita Teofilo Gutierrez</p>
+                        <p class="card-text">Tamaño: 10050 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text">Categoría: Carros, Lujos, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                    </div><br>
+                </div>`;
+            } else if (document.getElementById('carros').checked) {
+                card = `<div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">Carros lujosos</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">Carros de la colección personal de Teofilo Gutierrez</p>
+                        <p class="card-text">Tamaño: 7 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text">Categoría: Laminas, Animales, Naturaleza, Celebralo curramba!!!</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                    </div><br>
+                </div>`;
+            } else {
+                card = `<div class="card col" style="width: 22rem;">
+                    <div class="card-body">
+                        <div class="row card-title">
+                            <h5 class=" col">${document.getElementById('nombreColeccion').value}</h5>
+                            <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
+                        </div>
+                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                        <p class="card-text">${document.getElementById('descripcionColeccion').value}</p>
+                        <p class="card-text">Tamaño: 3 Coleccionables</p>
+                        <p class="card-text">Estado: Incompleta</p>
+                        <p class="card-text">Categoría: ${document.getElementById('categoriaColeccion').value}</p>
+                        <a href="buscarColeccionable.html" class="card-link btn btn-outline-info">Ver</a>
+                        <a href="#" class="card-link btn btn-outline-warning" data-toggle="modal" data-target="#editarColeccionModal">Editar</a>
+                    </div><br>
+                </div>`;
+            }
+
+            const element = document.createElement('div');
+            document.getElementById('colecciones').append(element);
+            element.outerHTML = card;
+        };
+
+        function editarColeccion(event) {
+            event.preventDefault();
+
+            document.getElementById('nombreHeroes').innerHTML = document.getElementById('nombreEditarColeccion').value;
+            document.getElementById('descripcionHeroes').innerHTML = document.getElementById('descripcionEditarColeccion').value;
+            document.getElementById('categoriaHeroes').innerHTML = document.getElementById('categoriaEditarColeccion').value;
+        };
+
         function bindEvents () {
             document.addEventListener('click', function (event) {
                 const target = event.target;
@@ -96,23 +264,8 @@
                 }
             });
 
-            document.getElementById('crearColeccionForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-                const card = `<div class="card" style="width: 22rem;">
-                        <div class="card-body">
-                            <div class="row card-title">
-                                <h5 class=" col">${document.getElementById('nombreColeccion').value}</h5>
-                                <button type="button" class="btn btn-outline-danger col" data-event="eliminarColeccion">Eliminar</button>
-                            </div>
-                            <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                            <p class="card-text">${document.getElementById('descripcionColeccion').value}</p>
-                            <a href="#" class="card-link btn btn-outline-warning">Editar</a>
-                        </div><br>
-                    </div>`;
-                const element = document.createElement('div');
-                document.getElementsByClassName('container')[1].append(element);
-                element.outerHTML = card;
-            });
+            document.getElementById('crearColeccionForm').addEventListener('submit', crearColeccion);
+            document.getElementById('editarColeccionForm').addEventListener('submit', editarColeccion);
         };
 
         (function () {
