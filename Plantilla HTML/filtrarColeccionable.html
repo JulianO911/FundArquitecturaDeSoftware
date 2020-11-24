@@ -42,14 +42,12 @@
         <section class="portfolio-block contact">
             <div class="container">
                 <div class="heading">
-                    <h2>Coleccion</h2>
+                    <h2>Filtrar coleccionables</h2>
                     <p></p>
-                    <div class="col-md-12 search-table-col">
-                        <form id="buscar">
-                            <input type="text" placeholder="Ingrese el nombre del coleccionable" size="26px">
-                            <button class="btn btn-success" id="btnBuscar" style="margin-left: 5px;" type="submit"><p title="Buscar"><i class="fa fa-search" style="font-size: 15px;"></i></p></button>
-                        </form>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#crearColeccionModal">+ Agregar</button>
+                    <div id="filtro" class="col-md-12 search-table-col">
+                        <button type="button" class="btn btn-info" id="Adquirido">Adquirido</button>
+                        <button type="button" class="btn btn-info" id="Faltante">Faltante</button>
+                        <button type="button" class="btn btn-info" id="Repetido">Repetido</button>
                     </div>
                     
             <br><br>
@@ -97,7 +95,9 @@
                     </p>
                 </div><br>
             </div>
+
             </div>
+            <button type="button" id="volver" class="btn btn-info" data-event="eliminarColeccion">Volver</button></a>
         </div>
 
 
@@ -105,84 +105,47 @@
 
 
             </div>
-            <div class="modal fade" id="crearColeccionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Crear Colección</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <form id="agregarColeccionable">
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label for="IdColeccionable">ID*</label>
-                                    <input class="form-control" type="number" id="ID" placeholder="ID">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nombre">Nombre</label>
-                                    <input class="form-control" type="text" id="nombre" placeholder="nombre del coleccionable">
-                                </div>
-                                <div class="form-group">
-                                    <label for="estado">Estado</label>
-                                    <input class="form-control" type="text" id="estado" placeholder="Estado">
-                                </div>
-                                <div class="form-group">
-                                    <label for="rareza">Rareza</label>
-                                    <input class="form-control" type="text" id="rareza" placeholder="Rareza">
-                                </div>
-                                <div class="form-group">
-                                    <label for="descripcion">Descripcion</label>
-                                    <input class="form-control" type="text" id="descripcion" placeholder="Descripcion del coleccionable">
-                                </div>
-                                <div class="form-group">
-                                    <label for="condicion">Condicion fisica</label>
-                                    <input class="form-control" type="text" id="condicion" placeholder="Condicion fisica">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary">Agregar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </main>
-        
         </section>
     </main>
     <script> 
         (function () {
             document.addEventListener('DOMContentLoaded', function(){
-                document.getElementById("buscar").addEventListener("submit",function (event) {
+                document.getElementById("Adquirido").addEventListener("click",function (event) {
                     event.preventDefault()
-                    document.getElementById("card1").classList.add("d-none")
+                    document.getElementById("card2").classList.add("d-none")
                     document.getElementById("card3").classList.add("d-none")
                 })
             }, false);
         })();
-        document.getElementById('agregarColeccionable').addEventListener('submit', function (event) {
-                event.preventDefault();
-                const card = ` <div class="card col" style="width: 22rem" id="card2">
-                <div class="card-body" style="color: rgb(4, 2, 12);">
-                    <div class="row card-title">
-                        <h5 class=" col">${document.getElementById('nombre').value}</h5>
-                        <a href="editarColeccionable.html"><button type="button" class="btn btn-info" data-event="eliminarColeccion">Editar</button></a>
-                    </div>
-                    <p class="card-text">-ID: ${document.getElementById('ID').value}  <br/>
-                        -Estado: ${document.getElementById('estado').value}  <br/>
-                        -Rareza: ${document.getElementById('rareza').value}  <br/>
-                        -Descripcion: ${document.getElementById('descripcion').value}  <br/>
-                        -Condición física: ${document.getElementById('condicion').value}  <br/>
-                    </p>
-                </div><br>
-            </div>`;
-                const element = document.createElement('div');
-                document.getElementsByClassName('row')[0].append(element);
-                element.outerHTML = card;
-            });
+        (function () {
+            document.addEventListener('DOMContentLoaded', function(){
+                document.getElementById("Faltante").addEventListener("click",function (event) {
+                    event.preventDefault()
+                        document.getElementById("card1").classList.add("d-none")
+                        document.getElementById("card3").classList.add("d-none")
+                    
+                })
+            }, false);
+        })();
+        (function () {
+            document.addEventListener('DOMContentLoaded', function(){
+                document.getElementById("Repetido").addEventListener("click",function (event) {
+                    event.preventDefault()
+                    document.getElementById("card1").classList.add("d-none")
+                    document.getElementById("card2").classList.add("d-none")
+                })
+            }, false);
+        })();
+        (function () {
+            document.addEventListener('DOMContentLoaded', function(){
+                document.getElementById("volver").addEventListener("click",function (event) {
+                    event.preventDefault()
+                    document.getElementById("card1").classList.remove("d-none")
+                    document.getElementById("card2").classList.remove("d-none")
+                    document.getElementById("card3").classList.remove("d-none")
+                })
+            }, false);
+        })();
     </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
