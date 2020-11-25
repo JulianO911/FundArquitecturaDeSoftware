@@ -1,0 +1,100 @@
+.mh-100vh {
+  min-height: 100vh;
+}
+
+#login-block {
+  -webkit-box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+@media (max-width: 991.98px) {
+  #login-block {
+    opacity: .95;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #bg-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .w-lg-75 {
+    width: 75%;
+  }
+}
+
+@media (min-width: 992px) {
+  .rounded-lg-0 {
+    border-radius: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .w-xl-50 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  #agregar {
+    float: right;
+  }
+}
+
+@media (min-width: 768px) {
+  #agregar {
+    float: right;
+  }
+}
+
+.btn:not(:disabled):not(.disabled) {
+}
+
+@media (min-width: 992px) {
+  .btn-group.derecha {
+    float: right;
+  }
+}
+
+.btn-group.derecha {
+  float: right;
+}
+
+.col-md-6.col-lg-4.presentacion {
+  -ms-flex: 0 0 33.33333%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.cont-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#buscar {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+}
+
+#btnBuscar {
+  background-color: rgb(245,163,39);
+  border-color: rgb(245,163,39);
+}
+
+#btnRegistrar {
+  background-color: #1e7e34;
+  border-color: #1e7e34;
+}
+
